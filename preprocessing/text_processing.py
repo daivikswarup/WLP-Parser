@@ -4,6 +4,8 @@ from torch import LongTensor, cuda
 import config as cfg
 import collections
 
+from corpus.WLPDataset import Data
+
 
 def gen_list2id_dict(list_, min_freq=-1, insert_words=None, replace_digits=False):
     """

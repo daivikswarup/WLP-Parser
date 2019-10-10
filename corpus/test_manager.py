@@ -2,7 +2,7 @@ from unittest import TestCase
 
 from torch.utils.data import DataLoader
 
-from corpus.Manager import WLPDataset
+from corpus import WLPDataset
 from preprocessing.text_processing import prepare_embeddings
 import config as cfg
 

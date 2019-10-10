@@ -1,7 +1,7 @@
 import glob
 import os
 
-from corpus.Manager import WLPDataset
+from corpus import WLPDataset
 import config as cfg
 import fileinput
 

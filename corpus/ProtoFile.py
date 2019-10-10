@@ -2,9 +2,10 @@ import os
 import pickle
 from collections import namedtuple, Counter
 
+
 import nltk
 from nltk.parse.stanford import StanfordDependencyParser, StanfordParser
-from nltk.tokenize.moses import MosesTokenizer
+from sacremoses import MosesTokenizer
 from tqdm import tqdm
 
 import config as cfg

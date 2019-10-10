@@ -2,7 +2,7 @@ import itertools
 from collections import namedtuple
 
 import re
-from nltk.tokenize.moses import MosesTokenizer
+from sacremoses import MosesTokenizer
 from torch.utils import data
 
 Data = namedtuple("Data", ['SENT', 'X', 'C'])
