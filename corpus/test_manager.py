@@ -3,13 +3,13 @@ from unittest import TestCase
 from torch.utils.data import DataLoader
 
 from corpus import WLPDataset
-from preprocessing.text_processing import prepare_embeddings
+
 import config as cfg
 
 
 class TestManager(TestCase):
     def test_pytorch_dataloader(self):
-        embedding_matrix, word_index, char_index = prepare_embeddings(replace_digit=cfg.REPLACE_DIGITS)
+        embedding_matrix, word_index, char_index = WLPDataset.prepare_embeddings(replace_digit=cfg.REPLACE_DIGITS)
         dataset = WLPDataset(word_index, char_index)
 
         def collate(batch):
