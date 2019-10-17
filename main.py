@@ -269,7 +269,7 @@ def test(name, data, tag_idx, model):
 def dataset_prep(loadfile=None, savefile=None):
     start_time = time.time()
 
-    if loadfile:
+    if loadfile and os.path.exists(loadfile):
         print("Loading corpus ...")
         corpus = pickle.load(open(loadfile, "rb"))
         corpus.gen_data(cfg.PER)
