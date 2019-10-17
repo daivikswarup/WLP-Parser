@@ -546,7 +546,22 @@ class WLPDataset:
             raise ValueError("Both dir path and filenames are None")
 
         if dir_path and filenames is None:
-            filenames = self.__from_dir(dir_path, extension="ann")
+            # filenames without extension expected (as both ann, txt parsed in ProtoFile)
+            #Todo: optimize below code. make _from_dir working
+            #filenames = self.__from_dir(dir_path, extension="ann")
+
+            files = []
+            for file in os.listdir(dir_path):
+                fname = file.split('.')[0]
+                fpath = os.path.join(dir_path, fname)
+                files.append(fpath)
+
+            filenames = []
+            fileSet = set(files)
+
+            for file in fileSet:
+                filenames.append(file)
+
         if cfg.FILTER_ALL_NEG:
             print("FILTERING BAD SENTENCES")
 
